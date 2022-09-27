@@ -1,0 +1,121 @@
+/* 	Name: Aria Siriouthay
+	Assignment: HW2, Style a Site with External CSS
+	Email: aria_siriouthay@student.uml.edu 
+	Resources: CSS Grid crash course, w3 schools, help forums such as Stackoverflow.
+*/
+ 
+header, hgroup, nav, footer, figure, figcaption, aside, section, article {
+	display: block;
+	background-color:white;
+} 
+/* to include padding & border to all elements' height */
+*{
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+}
+/* targetting the main div to display content as a
+	CSS Grid. */
+#wrapper{
+	display: grid;
+	grid-template-areas: 
+						'header header header'
+						'nav article article'
+						'nav footer footer';
+	grid-template-columns: 1fr 5fr; /* initializing the column & row sizes, fr = fraction of space in grid */
+	grid-template-rows: 80px 1fr 80px;
+	margin: 100px auto 100px auto;  /* to center the grid */
+	width: 80%;
+	min-width: 600px; /*The 'main' area of the page is 80% of the page width, but with a 600px minimum*/
+}
+/* styling to the main section of page */
+#content{
+	background-color: white;
+	padding-left: 30px;
+	grid-area: article;
+	padding-right:30px;
+}
+/* styling the page itself (not main content) */
+body {
+	background: url(ptrbackground.jpg), #00569f; /* initializing background with gradient image and background color */
+	color: #666666;
+	font-family: Arial, Helvetica, sans-serif;
+	width:100%;
+	height:100%;
+}
+/* targetting & styling the unordered list  */
+#content > ul{
+	padding-left: 30px;
+	list-style-image: url(marker.gif); /* using image as bullet points */
+	list-style-position: inside; /* to align bullet points with text */
+}
+span{
+	font-weight: bold;
+	color:#7286a2;
+} 
+p{
+	padding-bottom:20px;
+}
+img{
+	float:left; /* to allow text to wrap around image */
+	padding-right: 30px;
+}
+header{
+	grid-area: header;
+	background-image: url("sunset.jpg"); 
+	background-position: center; /* so background image fills space rather than repeating grid-like */
+	background-size: cover;
+	color:#FFFFFF;
+	margin-bottom: 0;
+	padding: 10px;
+}
+nav{
+	grid-area: nav;
+	background-color: #8dc6e4;
+	padding:30px;
+}
+/* targetting the list elements directly */
+nav ul {
+	font-size: 1.2em;
+	list-style-type: none;
+	text-decoration: none;
+	font-weight: bold;
+} 
+nav a:link{
+	color:#000033;
+	text-decoration: none;
+}
+nav a:visited {
+	color: #344873;
+	text-decoration: none;
+}
+nav a:hover {
+	color: #FFFFFF;
+	text-decoration: none;
+}
+h2 {
+	color: #3399CC;
+	padding-top: 20px;
+	padding-bottom: 20px;
+}
+h1,
+h2 {
+	font-family: Georgia, "Times New Roman", serif;
+}
+#contact {
+	font-size: 90%;
+	padding:10px;
+}
+dt {
+	color: #000033;
+}
+footer {
+	font-family: Georgia, "Times New Roman", serif;
+	padding-left: 30px;
+	padding-top: 30px;
+	padding-bottom: 30px;
+	font-style: italic;
+	font-size: 80%;
+	grid-area: footer;
+}
+
